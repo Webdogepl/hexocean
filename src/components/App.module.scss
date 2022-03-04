@@ -1,0 +1,27 @@
+@font-face {
+	font-family: "Poppins", sans-serif;
+	src: url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800;900&display=swap");
+}
+
+$primary-color: #f56b95;
+$primary-font: "Poppins", sans-serif;
+
+html,
+body {
+	margin: 0;
+	font-family: $primary-font;
+}
+
+*:focus {
+	outline: none;
+}
+
+.app {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	place-items: center;
+	place-content: center;
+	min-height: 100vh;
+	background: $primary-color;
+}

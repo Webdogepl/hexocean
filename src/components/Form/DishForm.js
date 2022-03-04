@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
 import React from "react";
 import { Form, Field } from "react-final-form";
+import styles from "./DishForm.module.scss";
 
 function DishForm() {
 	const onSubmit = async (values) => {
@@ -14,10 +15,12 @@ function DishForm() {
 	);
 
 	return (
-		<>
+		<div className={styles.formContainer}>
+			<h1 className={styles.title}>HexOcean Dish Form</h1>
+
 			<Form
 				onSubmit={onSubmit}
-				initialValues={{}}
+				initialValues={{ preparation_time: "00:00:00" }}
 				render={({ handleSubmit, form, submitting, pristine, values }) => (
 					<form onSubmit={handleSubmit}>
 						<div>
@@ -29,16 +32,20 @@ function DishForm() {
 							<Field
 								name="preparation_time"
 								component="input"
-								type="number"
-								min="0"
-								max="12"
+								type="time"
+								value="00:00:00"
+								min="00:00:00"
+								max="05:00:00"
+								step="1"
 								required
 							/>
 						</div>
 						<div>
 							<label>Dish type</label>
 							<Field name="type" component="select" required>
-								<option>Choose</option>
+								<option value="" disabled>
+									Choose
+								</option>
 								<option value="pizza">Pizza 🍕</option>
 								<option value="soup">Soup 🍲</option>
 								<option value="sandwich">Sandwich 🥪</option>
@@ -78,7 +85,7 @@ function DishForm() {
 							/>
 						</Condition>
 
-						<div className="buttons">
+						<div className={styles.buttonsWrapper}>
 							<button type="submit" disabled={submitting || pristine}>
 								Submit
 							</button>
@@ -90,11 +97,10 @@ function DishForm() {
 								Reset
 							</button>
 						</div>
-						<pre>{JSON.stringify(values, 0, 2)}</pre>
 					</form>
 				)}
 			/>
-		</>
+		</div>
 	);
 }
 
