@@ -3,7 +3,7 @@
 	color: white;
 	padding: 5%;
 	box-shadow: 0 0 20px 0px black;
-	width: clamp(200px, 50%, 900px);
+	width: clamp(300px, 50%, 900px);
 	height: 70vh;
 	transition: height 1s;
 
@@ -63,5 +63,11 @@ select {
 			color: #f56b95;
 			transition: 0.5s;
 		}
+	}
+}
+
+@media (max-width: 1400px) {
+	.formContainer {
+		height: auto;
 	}
 }
