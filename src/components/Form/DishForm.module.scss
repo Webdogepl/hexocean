@@ -4,6 +4,12 @@
 	padding: 5%;
 	box-shadow: 0 0 20px 0px black;
 	width: clamp(200px, 50%, 900px);
+	height: 70vh;
+	transition: height 1s;
+
+	div {
+		margin-block: 1em;
+	}
 }
 
 .title {
