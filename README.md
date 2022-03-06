@@ -21,6 +21,6 @@ It's my recruitment task project for HexOcean.
 
 ### How to set up project:
 
-- git clone https://github.com/Webdogepl/hexocean
+- `git clone` https://github.com/Webdogepl/hexocean
 - `npm install` to install dependencies
 - `npm start` to start the app
